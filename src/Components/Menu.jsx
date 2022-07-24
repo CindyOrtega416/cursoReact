@@ -36,6 +36,8 @@ function Menu(props){
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
+
+                  <Nav.Link as={Link} to="/carrito">Carrito</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
                                 {

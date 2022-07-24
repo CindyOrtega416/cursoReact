@@ -10,7 +10,12 @@ import NotFound from '../Pages/NotFound';
 import ProductosAlta from '../Pages/ProductosAlta';
 import ProductosModificar from '../Pages/ProductosModificar';
 import AuthContext from '../Context/AuthContext';
+import Carrito from "../Pages/Carrito";
+import {useState} from "react";
+
 function Public() {
+    const [cartItems, setCartItems] = useState([])
+
     return (
         <AuthContext.Consumer>
             {
@@ -34,6 +39,7 @@ function Public() {
 
                         <Route path='/producto/:id' element={<DetallePage />}  />
                         <Route path='*' element={<NotFound />} />
+                        <Route path='/carrito' element={<Carrito cartItems={cartItems}/>} />
                     </Routes>
             }
         </AuthContext.Consumer>

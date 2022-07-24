@@ -39,7 +39,6 @@ function ProductosAlta(){
                     {errors.lastname && <span>El campo es obligatorio</span>}
                 </div>
                 <Input label="Descripcion" type="text" name="description" register={{...register("description", { required: true})}} />
-
                 <Button type="submit" variant="primary">Guardar</Button>
             </Form>
         </div>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import {Link} from "react-router-dom"
 import {Card,Button,Col} from 'react-bootstrap'
 import AuthContext from "../Context/AuthContext";
@@ -7,8 +7,15 @@ const style = {
     card:{ width: '18rem' }
 }
 function Producto(props){
+   // const [cartItems, setCartItems] = useState([])
+    let cartItems = []
     const {data,id} = props
     console.log(data)
+
+    const handleComprar = (event) => {
+        event.preventDefault()
+        cartItems.push(...cartItems, event.target.name)
+    }
 
     
     return(
@@ -28,6 +35,7 @@ function Producto(props){
                                 context.isLogin &&
                                 <Button as={Link} to={'/productos/modificar/'+id} variant="primary">Modificar</Button>
                             }
+                            <Button onClick={handleComprar} variant="primary">Comprar</Button>
 
                 </Card.Body>
             </Card>
