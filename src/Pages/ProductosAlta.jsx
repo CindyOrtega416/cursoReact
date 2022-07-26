@@ -159,10 +159,12 @@ function ProductosAlta(){
                             </div>
                             <div className="col-12 py-3 text-center">
                                 <button
+                                className="btn btn-add"
+                                style={{background: "#bf7034", padding: "10px 50px", color: "white"}}
                                     type="submit"
                                     //onClick={uploadImage}
                                     disabled={progress !== null && progress < 100}
-                                />
+                                >Publicar</button>
                             </div>
                 </form>
                 </div>

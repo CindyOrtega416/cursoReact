@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react"
+import { Card } from "react-bootstrap"
 import {useParams} from "react-router-dom"
 import Loading from "../Components/Loading"
 import {getByIdProductos} from "../Services/productosServices"
@@ -27,11 +28,14 @@ function DetallePage() {
     )
     return(
         <Loading loading={loading}>
-            <div className="">
-                <h1>{producto.name}</h1>
-                <p>$ {producto.price}</p>
-                <p> {producto.description}</p>
-            </div>
+            <Card>
+                <Card.Body>
+                    <Card.Title>{producto.name}</Card.Title>
+                    <img src={producto.imgUrl} />
+                    <Card.Text>$ {producto.price}</Card.Text>
+                    <Card.Text>{producto.description}</Card.Text>
+                </Card.Body>
+            </Card>
         </Loading>
     )
     

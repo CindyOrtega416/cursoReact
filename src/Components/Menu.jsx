@@ -36,13 +36,11 @@ function Menu(props){
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
-
-                  <Nav.Link as={Link} to="/carrito">Carrito</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
                                 {
                                     context.isLogin &&
-                                        <div>Hola {context?.userInfo?.name}</div>
+                                        <div className="px-5">Hola {context?.userInfo?.name}</div>
                                 }
             </Navbar>
                     }
